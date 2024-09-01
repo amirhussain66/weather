@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            height: 100vh;
+        }
+
+        .main {
+            padding: 20px 40px;
+            ;
+            width: 280px;
+            background-color: blue;
+            border-radius: 25px;
+        }
+
+        input {
+            padding-left: 7px;
+            display: block;
+            height: 25px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 250px;
+        }
+
+        label {
+            color: beige;
+            font-weight: 700;
+        }
+
+        button {
+            padding: 7px 10px;
+            font-weight: 900;
+            font-size: larger;
+            border-radius: 8px;
+        }
+
+        p {
+            color: beige;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <label for="weather">Enter Temperature in C</label>
+            <input id="weatherInput" type="number">
+            <button onclick="weatherResult()">Get Result</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+
+    <script>
+        function weatherResult() {
+            let weatherTemperature = parseInt(document.getElementById("weatherInput").value);
+
+            if (weatherTemperature <= 5) {
+                document.getElementById("result").innerHTML = "Weather is too cold. Please wear a hot dress.";
+            } else if (weatherTemperature <= 10) {
+                document.getElementById("result").innerHTML = "Weather is cold. A warm coat is recommended.";
+            } else if (weatherTemperature <= 15) {
+                document.getElementById("result").innerHTML = "Weather is cool. A jacket should be enough.";
+            } else if (weatherTemperature <= 20) {
+                document.getElementById("result").innerHTML = "Weather is mild. A sweater or long sleeve shirt should be fine.";
+            } else if (weatherTemperature <= 35) {
+                document.getElementById("result").innerHTML = "Weather is warm. Light clothing is recommended.";
+            } else if (weatherTemperature <= 40) {
+                document.getElementById("result").innerHTML = "Weather is hot. Stay cool and wear light, breathable clothes.";
+            } else {
+                document.getElementById("result").innerHTML = "Weather is too hot. Stay hydrated and wear very light clothing.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
